@@ -31,7 +31,7 @@ const Instruction = () => {
         </div>
         <p className={classes["step-description"]}>
           You can easly track your expenses. Use special budget section, and
-          fill the fields of expenses and incomes. It the easiest way to take
+          fill the fields of expenses and incomes. It's the easiest way to take
           care of your home budget.
         </p>
         <div className={classes["step-container"]}>

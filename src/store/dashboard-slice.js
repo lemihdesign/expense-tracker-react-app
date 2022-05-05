@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialDashboardState = { instructionVisibility: true };
+const initialDashboardState = {
+  instructionVisibility: true,
+  budget: 2,
+  expenses: [],
+};
 
 const dashboardSlice = createSlice({
   name: "dashboard",
@@ -8,6 +12,9 @@ const dashboardSlice = createSlice({
   reducers: {
     hideInstruction(state, action) {
       state.instructionVisibility = action.payload;
+    },
+    changeBudget(state, action) {
+      state.budget = action.payload;
     },
   },
 });
