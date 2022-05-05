@@ -19,3 +19,25 @@
     list-style: none;
   }
 }
+
+@media (min-width: 769px) {
+  .profiles-list {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 200px;
+  }
+
+  .profiles-list h2 {
+    font-family: var(--groteskFont);
+    color: var(--white);
+    font-size: 22px;
+  }
+
+  .profiles-list ul {
+    list-style: none;
+  }
+}

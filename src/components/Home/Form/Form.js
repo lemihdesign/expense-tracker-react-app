@@ -65,6 +65,7 @@ const Form = () => {
           value={nameInputValue}
           onChange={nameInputChangeHandler}
           onBlur={nameBlurChangeHandler}
+          placeholder="Jan Kowalski"
         />
         {nameInputHasError && (
           <p
