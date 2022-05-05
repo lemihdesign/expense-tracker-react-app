@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 import Profile from "./Profile";
 
+import classes from "./ProfilesList.module.css";
+
 const ProfilesList = () => {
   const profiles = useSelector((state) => state.form.name);
   const hasItems = profiles.length > 0;
@@ -9,8 +11,8 @@ const ProfilesList = () => {
     content = <Profile />;
   }
   return (
-    <div>
-      <h2>Profiles List</h2>
+    <div className={classes["profiles-list"]}>
+      <h2>Welcome back, choose your profile.</h2>
       <ul>{content}</ul>
     </div>
   );

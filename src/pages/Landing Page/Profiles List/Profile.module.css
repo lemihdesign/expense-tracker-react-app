@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+  .profile-item {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 6px 9px rgba(0, 0, 0, 0.26);
+    background-color: var(--white);
+    border-radius: 10px;
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  .profile-item img {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: 25px auto;
+  }
+
+  a {
+    font-family: var(--groteskFont);
+    color: var(--darkGray);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+  }
+}
