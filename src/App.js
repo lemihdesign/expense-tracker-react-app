@@ -1,11 +1,14 @@
+import { Route, Routes } from "react-router";
 import "./App.css";
-import Home from "./pages/Home";
+import Home from "./pages/Landing Page/Home";
+import Main from "./pages/Dashboard/Main";
 
 function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/dashboard" element={<Main />} />
+    </Routes>
   );
 }
 

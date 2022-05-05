@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
-import useInput from "../../../hooks/use-input";
 import { formActions } from "../../../store/form-slice";
+import { Link } from "react-router-dom";
+
+import useInput from "../../../hooks/use-input";
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -61,9 +63,11 @@ const Form = () => {
             Please enter a valid first name.
           </p>
         )}
-        <button disabled={!formIsValid} type="submit">
-          Confirm
-        </button>
+        <Link to="/dashboard">
+          <button disabled={!formIsValid} type="submit">
+            Confirm
+          </button>
+        </Link>
       </form>
     </div>
   );
