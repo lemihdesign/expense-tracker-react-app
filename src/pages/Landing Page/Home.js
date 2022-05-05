@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import Form from "../../components/Home/Form/Form";
-import ProfilesList from "./Profiles List/ProfilesList";
+import ProfilesList from "../../components/Home/Profiles List/ProfilesList";
 
 import classes from "./Home.module.css";
 

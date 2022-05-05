@@ -1,11 +1,14 @@
-import { useSelector } from "react-redux";
+import TopBar from "../../components/Dashboard/Top Bar/TopBar";
+import Navigation from "../../components/Layout/Navigation";
+import Instruction from "../../components/UI/Instruction";
 import classes from "./Main.module.css";
 
 const Main = () => {
-  const username = useSelector((state) => state.form.name);
   return (
-    <div>
-      <p>Hello {username}</p>
+    <div className={classes["dashboard-main"]}>
+      <TopBar />
+      <Navigation />
+      <Instruction />
     </div>
   );
 };
