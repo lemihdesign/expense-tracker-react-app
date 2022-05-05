@@ -4,6 +4,9 @@ import { useNavigate } from "react-router";
 
 import useInput from "../../../hooks/use-input";
 
+import classes from "./Form.module.css";
+import Wrapper from "../../Layout/Wrapper";
+
 const Form = () => {
   const history = useNavigate();
   const dispatch = useDispatch();
@@ -41,8 +44,18 @@ const Form = () => {
   };
 
   return (
-    <div>
-      <h2>let us optimize your home affairs</h2>
+    <div className={classes.form}>
+      <Wrapper>
+        <h2>Let us optimize your home affairs.</h2>
+        <p>
+          Easily manage your home budget, track expenses and plan daily chores.
+          It's all thanks to the Expense Tracker app.
+        </p>
+        <div className={classes.step}>
+          <span>1</span>
+          <p>Setup your Profile</p>
+        </div>
+      </Wrapper>
       <form onSubmit={formSubmitHandler}>
         <label htmlFor="name">Your name and surname</label>
         <input
@@ -56,12 +69,13 @@ const Form = () => {
         {nameInputHasError && (
           <p
             style={{
+              fontFamily: "var(--groteskFont)",
               color: "crimson",
               fontWeight: "600",
               fontSize: "13px",
             }}
           >
-            Please enter a valid first name.
+            Please enter a valid name.
           </p>
         )}
 

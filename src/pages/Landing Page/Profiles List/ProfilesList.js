@@ -1,16 +1,17 @@
 import { useSelector } from "react-redux";
+import Profile from "./Profile";
 
 const ProfilesList = () => {
   const profiles = useSelector((state) => state.form.name);
   const hasItems = profiles.length > 0;
   let content = "";
   if (hasItems) {
-    content = <p>contains</p>;
+    content = <Profile />;
   }
   return (
     <div>
       <h2>Profiles List</h2>
-      {content}
+      <ul>{content}</ul>
     </div>
   );
 };

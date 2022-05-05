@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --darkGray: #131200;
+  --headerDarkGray: rgb(31, 31, 31);
+  --lightGray: #7a7a7a;
+  --borderLightGray: #dddd;
+  --white: #f3f3f3;
+  --black: #000;
+  --green: #2b6747;
+  --mainFont: "Roboto", sans-serif;
+  --bebasFont: "Bebas Neue", cursive;
+  --groteskFont: "Space Grotesk", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

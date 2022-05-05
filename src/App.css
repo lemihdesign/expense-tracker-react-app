@@ -1,3 +1,8 @@
 .invalid {
   border: 1px solid crimson;
 }
+@media (max-width: 768px) {
+  .invalid {
+    width: 100%;
+  }
+}
