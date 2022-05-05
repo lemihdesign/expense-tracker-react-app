@@ -1,13 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialFormState = { name: "" };
+const initialFormState = {
+  name: localStorage.getItem("name")
+    ? JSON.parse(localStorage.getItem("name"))
+    : [],
+};
 
 const formSlice = createSlice({
   name: "form",
   initialState: initialFormState,
   reducers: {
-    changeName(state, action) {
-      state.name = action.payload;
+    addProfile(state, action) {
+      state.name.push(action.payload);
+      localStorage.setItem("name", JSON.stringify(state.name));
     },
   },
 });

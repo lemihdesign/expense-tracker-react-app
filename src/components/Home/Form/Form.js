@@ -1,10 +1,11 @@
 import { useDispatch } from "react-redux";
 import { formActions } from "../../../store/form-slice";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 import useInput from "../../../hooks/use-input";
 
 const Form = () => {
+  const history = useNavigate();
   const dispatch = useDispatch();
 
   const {
@@ -34,9 +35,9 @@ const Form = () => {
       return;
     }
 
-    dispatch(formActions.changeName(e.target.value));
-
+    dispatch(formActions.addProfile(nameInputValue));
     nameInputReset();
+    history("/dashboard");
   };
 
   return (
@@ -63,11 +64,10 @@ const Form = () => {
             Please enter a valid first name.
           </p>
         )}
-        <Link to="/dashboard">
-          <button disabled={!formIsValid} type="submit">
-            Confirm
-          </button>
-        </Link>
+
+        <button disabled={!formIsValid} type="submit">
+          Confirm
+        </button>
       </form>
     </div>
   );
