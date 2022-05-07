@@ -64,4 +64,16 @@
     padding: 10px;
     border-radius: 0;
   }
+
+  .expenses-container button:disabled {
+    background-color: var(--borderLightGray);
+    cursor: pointer;
+  }
+
+  .expenses-container .error {
+    font-family: var(--groteskFont);
+    font-size: 12px;
+    color: crimson;
+    margin-top: 5px;
+  }
 }
