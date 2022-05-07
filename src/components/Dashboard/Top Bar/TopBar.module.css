@@ -3,7 +3,7 @@
     width: 100%;
     height: 50px;
     display: flex;
-    border-bottom: 1px solid var(--borderLightGray);
+    /* border-bottom: 1px solid var(--borderLightGray); */
   }
 
   .top-bar-container {
