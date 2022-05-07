@@ -67,12 +67,7 @@ const Expenses = () => {
 
   let formIsValid = false;
 
-  if (
-    expenseNameIsValid &&
-    expensePriceIsValid &&
-    expenseTypeIsValid &&
-    expenseDescriptionIsValid
-  )
+  if (expenseNameIsValid && expensePriceIsValid && expenseDescriptionIsValid)
     formIsValid = true;
 
   const submitFormHandler = (e) => {
@@ -172,11 +167,11 @@ const Expenses = () => {
             id="expense-type"
             value={expenseTypeValue}
             onChange={expenseTypeChangeHandler}
-            onBlur={expenseTypeBlurChangeHandler}
           >
-            <option value="food" selected>
-              Food
+            <option value="" disabled>
+              Choose type
             </option>
+            <option value="food">Food</option>
             <option value="education">Education</option>
             <option value="travel">Travel</option>
             <option value="shopping">Shopping</option>
@@ -248,11 +243,11 @@ const Expenses = () => {
             id="expense-type"
             value={expenseTypeValue}
             onChange={expenseTypeChangeHandler}
-            onBlur={expenseTypeBlurChangeHandler}
           >
-            <option value="food" selected>
-              Food
+            <option value="" disabled>
+              Choose type
             </option>
+            <option value="food">Food</option>
             <option value="education">Education</option>
             <option value="travel">Travel</option>
             <option value="shopping">Shopping</option>
