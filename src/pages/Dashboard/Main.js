@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
 
 import Budget from "../../components/Dashboard/Budget/Budget";
@@ -12,8 +11,6 @@ import classes from "./Main.module.css";
 import { Fragment } from "react";
 
 const Main = () => {
-  const [isToggled, setIsToggled] = useState(false);
-
   const isInstructionVisible = useSelector(
     (state) => state.dashboard.instructionVisibility
   );
@@ -26,10 +23,7 @@ const Main = () => {
       {!isInstructionVisible && (
         <Fragment>
           <Budget />
-          <ToggleBudget
-            isToggled={isToggled}
-            onToggle={() => setIsToggled(!isToggled)}
-          />
+          <ToggleBudget />
         </Fragment>
       )}
     </div>

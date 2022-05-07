@@ -5,6 +5,7 @@ const initialDashboardState = {
   budget: 2,
   incomes: [],
   expenses: [],
+  budgetToggle: false,
 };
 
 const dashboardSlice = createSlice({
@@ -29,6 +30,9 @@ const dashboardSlice = createSlice({
       };
 
       state.incomes.push(incomeItem);
+    },
+    toggleBudgetHandler(state) {
+      state.budgetToggle = !state.budgetToggle;
     },
   },
 });

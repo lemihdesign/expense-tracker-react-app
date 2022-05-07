@@ -29,12 +29,20 @@
 
   .placeholders p {
     position: relative;
+    display: flex;
+    align-items: center;
     z-index: 2;
     color: var(--darkGray);
     font-family: var(--groteskFont);
     font-size: 14px;
     font-weight: 600;
     opacity: 1;
+  }
+
+  .placeholders p img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
   }
 
   .slider {
