@@ -14,7 +14,7 @@ const dashboardSlice = createSlice({
       state.instructionVisibility = action.payload;
     },
     changeBudget(state, action) {
-      state.budget = action.payload;
+      state.budget = state.budget + action.payload;
     },
   },
 });

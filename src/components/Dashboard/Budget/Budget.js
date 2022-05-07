@@ -15,7 +15,7 @@ const Budget = () => {
 
   const [showAddMoney, setShowAddMoney] = useState(true);
   const [addMoneyActive, setIsMoneyActive] = useState(false);
-  const [moneyValue, setMoneyValue] = useState(budget);
+  const [moneyValue, setMoneyValue] = useState(0);
 
   const showAddMoneyHandler = () => {
     setShowAddMoney(false);
@@ -32,7 +32,7 @@ const Budget = () => {
   };
 
   const saveBudgetHandler = () => {
-    dispatch(dashboardActions.changeBudget(moneyValue));
+    dispatch(dashboardActions.changeBudget(Number(moneyValue)));
   };
 
   let incomesContent;
