@@ -23,8 +23,6 @@ const Incomes = (props) => {
           <span>$</span>
           {Number(budget).toFixed(2)}
         </p>
-        <label htmlFor="income">Add new income</label>
-        <input type="number" id="income" />
       </Fragment>
     );
   } else {
