@@ -7,6 +7,9 @@ const initialDashboardState = {
   budget: localStorage.getItem("budget")
     ? JSON.parse(localStorage.getItem("budget"))
     : 0,
+  initialBudget: localStorage.getItem("initialBudget")
+    ? JSON.parse(localStorage.getItem("initialBudget"))
+    : 0,
   incomes: localStorage.getItem("incomes")
     ? JSON.parse(localStorage.getItem("incomes"))
     : [],
@@ -29,6 +32,7 @@ const dashboardSlice = createSlice({
     },
     changeBudget(state, action) {
       state.budget = state.budget + action.payload;
+      state.initialBudget = state.initialBudget + action.payload;
 
       const date = new Date();
       const currentDay = date.toLocaleDateString();
@@ -43,6 +47,10 @@ const dashboardSlice = createSlice({
 
       state.incomes.push(incomeItem);
       localStorage.setItem("budget", JSON.stringify(state.budget));
+      localStorage.setItem(
+        "initialBudget",
+        JSON.stringify(state.initialBudget)
+      );
       localStorage.setItem("incomes", JSON.stringify(state.incomes));
     },
     toggleBudgetHandler(state) {
@@ -51,6 +59,10 @@ const dashboardSlice = createSlice({
     addExpense(state, action) {
       state.expenses.push(action.payload);
       localStorage.setItem("expenses", JSON.stringify(state.expenses));
+    },
+    reduceBudget(state, action) {
+      state.budget = state.budget - action.payload;
+      localStorage.setItem("budget", JSON.stringify(state.budget));
     },
   },
 });

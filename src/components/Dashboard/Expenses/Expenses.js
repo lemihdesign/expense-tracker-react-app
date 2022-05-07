@@ -88,6 +88,7 @@ const Expenses = () => {
     };
 
     dispatch(dashboardActions.addExpense(expenseItem));
+    dispatch(dashboardActions.reduceBudget(Number(expensePriceValue)));
     setIsFormVisible(false);
 
     expenseNameReset();
@@ -104,7 +105,7 @@ const Expenses = () => {
           <div className={classes["summary-container"]}>
             <p className={classes["expenses-label"]}>Summary</p>
             <p className={classes["expenses-stats"]}>
-              Total Expenses: ${totalPrice}
+              Total Expenses: ${totalPrice.toFixed(2)}
             </p>
             <p className={classes["expenses-stats"]}>
               Total operations: {totalOperations}

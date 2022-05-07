@@ -14,6 +14,7 @@ const Incomes = (props) => {
     onSaveBudgetHandler,
   } = props;
   const budget = useSelector((state) => state.dashboard.budget);
+  const initialBudget = useSelector((state) => state.dashboard.initialBudget);
   let incomesContent;
 
   if (budget === 0) {
@@ -32,7 +33,9 @@ const Incomes = (props) => {
           <span>$</span>
           {Number(budget).toFixed(2)}
         </p>
-        <p className={classes["total-budget"]}>Out of ${budget} budgeting.</p>
+        <p className={classes["total-budget"]}>
+          Out of ${initialBudget} budgeting.
+        </p>
       </Fragment>
     );
   }
