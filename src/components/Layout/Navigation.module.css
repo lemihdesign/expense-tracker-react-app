@@ -15,6 +15,7 @@
 
   nav {
     position: absolute;
+    z-index: 30;
     top: 100px;
     left: -150%;
     width: 100%;
