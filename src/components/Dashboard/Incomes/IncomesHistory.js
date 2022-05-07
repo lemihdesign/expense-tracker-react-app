@@ -1,5 +1,7 @@
 import { useSelector } from "react-redux";
 
+import IncomeHistoryItem from "./IncomeHistoryItem";
+
 import classes from "./IncomesHistory.module.css";
 
 import checkIcon from "../../../assets/icons/check.svg";
@@ -10,7 +12,20 @@ const IncomesHistory = () => {
 
   let content;
   if (hasItems) {
-    content = <p>Incomes</p>;
+    content = (
+      <div className={classes["incomes"]}>
+        <p>Incomes History</p>
+        <ul>
+          {incomesList.map((income) => (
+            <IncomeHistoryItem
+              money={income.money}
+              budgetAfterIncome={income.budgetAfterIncome}
+              date={income.date}
+            />
+          ))}
+        </ul>
+      </div>
+    );
   } else {
     content = (
       <div className={classes["empty-expenses-container"]}>

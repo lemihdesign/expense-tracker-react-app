@@ -16,7 +16,7 @@ const initialDashboardState = {
   expenses: localStorage.getItem("expenses")
     ? JSON.parse(localStorage.getItem("expenses"))
     : [],
-  budgetToggle: false,
+  budgetToggle: true,
 };
 
 const dashboardSlice = createSlice({
