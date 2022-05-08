@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+  .incomes-container {
+    width: 90%;
+    margin: 25px auto 0 auto;
+  }
+
+  .incomes-label {
+    font-family: var(--groteskFont);
+    font-size: 14px;
+    color: var(--darkGray);
+    font-weight: 600;
+  }
+}

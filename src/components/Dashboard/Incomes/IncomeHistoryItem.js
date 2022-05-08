@@ -6,15 +6,20 @@ const IncomeHistoryItem = (props) => {
   const { money, budgetAfterIncome, date } = props;
   return (
     <li className={classes["income-item"]}>
-      <div>
-        <div>
-          <img src={incomeIcon} alt="income icon" />
-          <p>Income</p>
+      <div className={classes["income-item-container"]}>
+        <div className={classes["income-item-header"]}>
+          <div className={classes["label"]}>
+            <img src={incomeIcon} alt="income icon" />
+            <p>Income</p>
+          </div>
+          <p className={classes.date}>{date}</p>
         </div>
-        <p>{date}</p>
       </div>
       <div>
-        {money.toFixed(2)} {budgetAfterIncome.toFixed(2)}
+        <p className={classes["income-value"]}>+ ${money.toFixed(2)}</p>
+        <p className={classes["budget-after-income-value"]}>
+          Budget after income: ${budgetAfterIncome.toFixed(2)}
+        </p>
       </div>
     </li>
   );

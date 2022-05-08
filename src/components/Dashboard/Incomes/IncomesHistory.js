@@ -14,7 +14,7 @@ const IncomesHistory = () => {
   if (hasItems) {
     content = (
       <div className={classes["incomes"]}>
-        <p>Incomes History</p>
+        <p className={classes["incomes-label"]}>Incomes History</p>
         <ul>
           {incomesList.map((income) => (
             <IncomeHistoryItem
@@ -28,14 +28,14 @@ const IncomesHistory = () => {
     );
   } else {
     content = (
-      <div className={classes["empty-expenses-container"]}>
+      <div className={classes["empty-incomes-container"]}>
         <img src={checkIcon} alt="checkIcon" />
         <p>You have no incomes history.</p>
       </div>
     );
   }
 
-  return <div className={classes["expenses-container"]}>{content}</div>;
+  return <div className={classes["incomes-container"]}>{content}</div>;
 };
 
 export default IncomesHistory;
