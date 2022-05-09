@@ -15,3 +15,18 @@
     padding-top: 10px;
   }
 }
+
+@media (min-width: 769px) {
+  .budget-section {
+    margin-left: 15%;
+    padding: 20px 20px;
+    background-color: var(--black);
+  }
+
+  .dashboard-label {
+    font-family: var(--groteskFont);
+    font-size: 22px;
+    color: var(--white);
+    margin-left: 30px;
+  }
+}

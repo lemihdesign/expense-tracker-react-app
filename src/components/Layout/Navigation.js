@@ -16,6 +16,7 @@ const Navigation = () => {
         <nav className={isActive ? classes["active"] : ""}>
           <ul>
             <li>Notifications</li>
+            <li>Overview</li>
             <li>Home Budget</li>
             <li>Schedules</li>
             <li>To Do</li>

@@ -65,13 +65,37 @@
   }
 
   nav {
-    position: absolute;
+    position: fixed;
     z-index: 30;
-    top: 100px;
+    top: 0;
+    z-index: 29;
     left: 0;
-    width: 100%;
+    width: 15%;
     min-height: 100vh;
-    background-color: var(--darkGray);
+    background-color: #fff;
+    border-right: 1px solid var(--borderLightGray);
     transition: 0.4s;
+  }
+  nav ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-top: 60px;
+  }
+
+  nav ul li {
+    width: 100%;
+    line-height: 50px;
+    font-family: var(--groteskFont);
+    font-size: 14px;
+    color: var(--darkGray);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+
+  nav ul li:hover {
+    background-color: var(--white);
   }
 }

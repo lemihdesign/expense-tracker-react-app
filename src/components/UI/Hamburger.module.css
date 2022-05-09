@@ -88,3 +88,9 @@
     transition: 0.4s;
   }
 }
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}
