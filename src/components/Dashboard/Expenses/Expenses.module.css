@@ -110,7 +110,7 @@
 
   .summary-container {
     width: 90%;
-    margin: 25px auto;
+    margin: 50px auto;
   }
 
   .expenses-label {
@@ -124,5 +124,15 @@
     font-family: var(--groteskFont);
     font-size: 14px;
     color: var(--lightGray);
+  }
+
+  .button-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-section button {
+    font-size: 14px;
   }
 }

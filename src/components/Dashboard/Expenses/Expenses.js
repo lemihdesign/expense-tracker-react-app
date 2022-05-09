@@ -8,6 +8,7 @@ import classes from "./Expenses.module.css";
 import checkIcon from "../../../assets/icons/check.svg";
 import { dashboardActions } from "../../../store/dashboard-slice";
 import ExpenseItem from "./ExpenseItem";
+import ChartBar from "../ChartBar/ChartBar";
 
 const Expenses = () => {
   const {
@@ -55,6 +56,11 @@ const Expenses = () => {
 
   const prices = expensesList.map((expense) => expense.price);
 
+  const chartData = expensesList.map((expense) => ({
+    price: expense.price,
+    label: expense.type,
+  }));
+
   prices.forEach((price) => {
     totalPrice += Number(price);
   });
@@ -96,29 +102,27 @@ const Expenses = () => {
   if (hasItems) {
     if (!isFormVisible) {
       content = (
-        <div className={classes["full-expenses-container"]}>
-          <div className={classes["summary-container"]}>
-            <p className={classes["expenses-label"]}>Summary</p>
-            <p className={classes["expenses-stats"]}>
-              Total Expenses: ${totalPrice.toFixed(2)}
-            </p>
-            <p className={classes["expenses-stats"]}>
-              Total operations: {totalOperations}
-            </p>
-            <button onClick={formVisibleHandler}>Add New Expense</button>
-            <p className={classes["expenses-label"]}>Operations history</p>
+        <>
+          <ChartBar chartData={chartData} totalPrice={totalPrice} />
+          <div className={classes["full-expenses-container"]}>
+            <div className={classes["button-section"]}>
+              <button onClick={formVisibleHandler}>Add New Expense</button>
+            </div>
+            <div className={classes["summary-container"]}>
+              <p className={classes["expenses-label"]}>Operations history</p>
+            </div>
+            <ul>
+              {expensesList.map((expense) => (
+                <ExpenseItem
+                  name={expense.name}
+                  price={expense.price}
+                  type={expense.type}
+                  description={expense.description}
+                />
+              ))}
+            </ul>
           </div>
-          <ul>
-            {expensesList.map((expense) => (
-              <ExpenseItem
-                name={expense.name}
-                price={expense.price}
-                type={expense.type}
-                description={expense.description}
-              />
-            ))}
-          </ul>
-        </div>
+        </>
       );
     } else {
       content = (
