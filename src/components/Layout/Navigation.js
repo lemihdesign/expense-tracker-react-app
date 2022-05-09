@@ -13,7 +13,15 @@ const Navigation = () => {
     <div className={classes["navigation"]}>
       <div className={classes["navigation-container"]}>
         <Hamburger active={isActive} onActive={activeHamburgerHandler} />
-        <nav className={isActive ? classes["active"] : ""}></nav>
+        <nav className={isActive ? classes["active"] : ""}>
+          <ul>
+            <li>Notifications</li>
+            <li>Home Budget</li>
+            <li>Schedules</li>
+            <li>To Do</li>
+            <li>Reminders</li>
+          </ul>
+        </nav>
       </div>
     </div>
   );

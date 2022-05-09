@@ -8,7 +8,6 @@ const ChartBar = (props) => {
     totalFood = 0,
     totalTravel = 0,
     totalShopping = 0;
-  //   const uniqueLabels = [...new Set(labels)];
 
   const educationRows = chartData.filter((data) => data.label === "education");
   const foodRows = chartData.filter((data) => data.label === "food");
