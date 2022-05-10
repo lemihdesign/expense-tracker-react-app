@@ -38,11 +38,13 @@ const dashboardSlice = createSlice({
       const currentDay = date.toLocaleDateString();
       const currentTime = date.toLocaleTimeString();
       const completeDate = `${currentDay} ${currentTime}`;
+      const time = currentTime.slice(0, 5);
 
       const incomeItem = {
         money: action.payload,
         budgetAfterIncome: state.budget,
         date: completeDate,
+        time,
       };
 
       state.incomes.push(incomeItem);

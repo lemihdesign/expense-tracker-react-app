@@ -21,6 +21,7 @@ const IncomesHistory = () => {
               money={income.money}
               budgetAfterIncome={income.budgetAfterIncome}
               date={income.date}
+              time={income.time}
             />
           ))}
         </ul>
