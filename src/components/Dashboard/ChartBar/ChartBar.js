@@ -34,8 +34,8 @@ const ChartBar = (props) => {
     <div className={classes["chart-container"]}>
       <Chart
         type="donut"
-        width={500}
-        height={500}
+        width={320}
+        height={450}
         series={[totalEducation, totalFood, totalTravel, totalShopping]}
         options={{
           dataLabels: {

@@ -20,13 +20,15 @@
   .budget-section {
     margin-left: 15%;
     padding: 20px 20px;
-    background-color: var(--black);
+    /* background-color: var(--black); */
+    border-bottom: 1px solid var(--borderLightGray);
   }
 
   .dashboard-label {
-    font-family: var(--groteskFont);
-    font-size: 22px;
-    color: var(--white);
+    font-family: var(--mainFont);
+    font-size: 18px;
+    color: var(--lightGray);
     margin-left: 30px;
+    /* font-weight: 900; */
   }
 }

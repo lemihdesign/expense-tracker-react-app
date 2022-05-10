@@ -9,6 +9,7 @@ import checkIcon from "../../../assets/icons/check.svg";
 import { dashboardActions } from "../../../store/dashboard-slice";
 import ExpenseItem from "./ExpenseItem";
 import ChartBar from "../ChartBar/ChartBar";
+import LastTransactions from "../Budget/Last Transactions/LastTransactions";
 
 const Expenses = () => {
   const {
@@ -81,11 +82,14 @@ const Expenses = () => {
 
     if (!formIsValid) return;
 
+    const currentTime = new Date().getHours() + ":" + new Date().getMinutes();
+
     const expenseItem = {
       name: expenseNameValue,
       price: expensePriceValue,
       type: expenseTypeValue,
       description: expenseDescriptionValue,
+      hour: currentTime,
     };
 
     dispatch(dashboardActions.addExpense(expenseItem));
@@ -103,13 +107,42 @@ const Expenses = () => {
     if (!isFormVisible) {
       content = (
         <>
-          <ChartBar chartData={chartData} totalPrice={totalPrice} />
-          <div className={classes["full-expenses-container"]}>
-            <div className={classes["button-section"]}>
-              <button onClick={formVisibleHandler}>Add New Expense</button>
+          <div className={classes["top-content"]}>
+            {<ChartBar chartData={chartData} totalPrice={totalPrice} />}
+            <div className={classes["last-transactions"]}>
+              <p className={classes["last-transactions-header"]}>
+                New Transactions
+              </p>
+              <ul>
+                {expensesList.slice(0, 5).map((expense) => (
+                  <LastTransactions
+                    name={expense.name}
+                    price={expense.price}
+                    type={expense.type}
+                    description={expense.description}
+                    hour={expense.hour}
+                  />
+                ))}
+              </ul>
             </div>
+            <div className={classes["add-expenses"]}>
+              <p className={classes["add-expenses-label"]}>Actions</p>
+              <p className={classes["add-expenses-history"]}>
+                Your history includes {totalOperations} completed operations.
+              </p>
+              <button
+                onClick={formVisibleHandler}
+                className={classes["add-new-expense-btn"]}
+              >
+                Add New Expense
+              </button>
+            </div>
+          </div>
+          <div className={classes["full-expenses-container"]}>
             <div className={classes["summary-container"]}>
-              <p className={classes["expenses-label"]}>Operations history</p>
+              <p className={classes["expenses-label"]}>
+                Full Operations History
+              </p>
             </div>
             <ul>
               {expensesList.map((expense) => (
@@ -118,6 +151,7 @@ const Expenses = () => {
                   price={expense.price}
                   type={expense.type}
                   description={expense.description}
+                  hour={expense.hour}
                 />
               ))}
             </ul>

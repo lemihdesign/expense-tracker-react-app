@@ -35,7 +35,7 @@ const Budget = () => {
 
   return (
     <div className={classes["budget-section"]}>
-      <p className={classes["dashboard-label"]}>Wallet</p>
+      <p className={classes["dashboard-label"]}>Your Total Ballance</p>
       <div className={classes["budget-container"]}>
         <Wrapper>
           <div className={classes["incomes"]}>

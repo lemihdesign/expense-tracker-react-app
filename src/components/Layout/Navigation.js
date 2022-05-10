@@ -15,12 +15,24 @@ const Navigation = () => {
         <Hamburger active={isActive} onActive={activeHamburgerHandler} />
         <nav className={isActive ? classes["active"] : ""}>
           <ul>
-            <li>Notifications</li>
-            <li>Overview</li>
-            <li>Home Budget</li>
-            <li>Schedules</li>
-            <li>To Do</li>
-            <li>Reminders</li>
+            <li>
+              <i className="fa-solid fa-bell"></i> Notifications
+            </li>
+            <li>
+              <i className="fa-solid fa-house"></i> Overview
+            </li>
+            <li>
+              <i className="fa-solid fa-sack-dollar"></i> Home Budget
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i> Schedules
+            </li>
+            <li>
+              <i className="fa-solid fa-clipboard-check"></i> To Do
+            </li>
+            <li>
+              <i class="fa-solid fa-business-time"></i> Reminders
+            </li>
           </ul>
         </nav>
       </div>

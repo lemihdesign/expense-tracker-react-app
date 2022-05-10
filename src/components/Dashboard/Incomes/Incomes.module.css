@@ -68,9 +68,9 @@
 
 @media (min-width: 769px) {
   .money {
-    font-family: var(--groteskFont);
+    font-family: var(--mainFont);
     font-size: 48px;
-    color: var(--white);
+    color: var(--darkGray);
     font-weight: 600;
     margin-top: 20px;
     margin-left: 0;
@@ -78,9 +78,9 @@
   }
 
   .total-budget {
-    font-family: var(--groteskFont);
+    font-family: var(--mainFont);
     font-size: 14px;
-    color: var(--white);
+    color: var(--darkGray);
   }
 
   .money span {

@@ -4,6 +4,7 @@
   width: 240px;
   height: 50px;
   margin-top: 25px;
+  cursor: pointer;
 }
 
 .switch input {
