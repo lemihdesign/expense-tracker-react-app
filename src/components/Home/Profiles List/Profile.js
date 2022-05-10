@@ -8,7 +8,7 @@ import houseIcon from "../../../assets/icons/house.svg";
 const Profile = () => {
   const username = useSelector((state) => state.form.name);
   return (
-    <Link to="/dashboard">
+    <Link to="/budget">
       <li className={classes["profile-item"]}>
         <img src={houseIcon} alt="houseIcon" />
         {username}

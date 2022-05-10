@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import Hamburger from "../UI/Hamburger";
 import classes from "./Navigation.module.css";
 
@@ -16,22 +17,39 @@ const Navigation = () => {
         <nav className={isActive ? classes["active"] : ""}>
           <ul>
             <li>
-              <i className="fa-solid fa-bell"></i> Notifications
+              <NavLink to="/">
+                <i className="fa-solid fa-bell"></i> Notifications{" "}
+                <span className={classes["soon-label"]}>Soon</span>
+              </NavLink>
             </li>
             <li>
-              <i className="fa-solid fa-house"></i> Overview
+              <NavLink to="/">
+                <i className="fa-solid fa-house"></i> Overview{" "}
+                <span className={classes["soon-label"]}>Soon</span>
+              </NavLink>
             </li>
             <li>
-              <i className="fa-solid fa-sack-dollar"></i> Home Budget
+              <NavLink to="/budget">
+                <i className="fa-solid fa-sack-dollar"></i> Home Budget
+              </NavLink>
             </li>
             <li>
-              <i class="fa-solid fa-clock"></i> Schedules
+              <NavLink to="/">
+                <i class="fa-solid fa-clock"></i> Schedules{" "}
+                <span className={classes["soon-label"]}>Soon</span>
+              </NavLink>
             </li>
             <li>
-              <i className="fa-solid fa-clipboard-check"></i> To Do
+              <NavLink to="/">
+                <i className="fa-solid fa-clipboard-check"></i> To Do{" "}
+                <span className={classes["soon-label"]}>Soon</span>
+              </NavLink>
             </li>
             <li>
-              <i class="fa-solid fa-business-time"></i> Reminders
+              <NavLink to="/">
+                <i class="fa-solid fa-business-time"></i> Reminders{" "}
+                <span className={classes["soon-label"]}>Soon</span>
+              </NavLink>
             </li>
           </ul>
         </nav>

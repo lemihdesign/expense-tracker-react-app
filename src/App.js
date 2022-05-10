@@ -7,7 +7,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/dashboard" element={<Main />} />
+      <Route path="/budget" element={<Main />} />
     </Routes>
   );
 }
