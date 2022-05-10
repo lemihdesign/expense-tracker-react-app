@@ -9,7 +9,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/budget" element={<BudgetPage />} />
-      <Route path="/to-do/all" element={<ToDoListPage />} />
+      <Route path="/to-do/" element={<ToDoListPage />} />
       <Route path="/to-do/:filterTask" element={<ToDoListPage />} />
     </Routes>
   );
