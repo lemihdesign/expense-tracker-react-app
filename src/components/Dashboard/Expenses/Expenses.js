@@ -82,7 +82,12 @@ const Expenses = () => {
 
     if (!formIsValid) return;
 
-    const currentTime = new Date().getHours() + ":" + new Date().getMinutes();
+    let currentHour = new Date().getHours();
+    if (currentHour < 10) currentHour = "0" + currentHour;
+    let currentMinutes = new Date().getMinutes();
+    if (currentMinutes < 10) currentMinutes = "0" + currentMinutes;
+
+    const currentTime = currentHour + ":" + currentMinutes;
 
     const expenseItem = {
       name: expenseNameValue,

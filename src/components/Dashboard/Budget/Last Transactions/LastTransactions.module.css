@@ -32,3 +32,9 @@
   border-radius: 15px;
   font-weight: 600;
 }
+
+@media (max-width: 768px) {
+  .last-expense {
+    display: none;
+  }
+}
