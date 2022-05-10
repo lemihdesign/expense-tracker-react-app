@@ -40,7 +40,7 @@ const Navigation = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/">
+              <NavLink to="/to-do/all">
                 <i className="fa-solid fa-clipboard-check"></i> To Do{" "}
                 <span className={classes["soon-label"]}>Soon</span>
               </NavLink>

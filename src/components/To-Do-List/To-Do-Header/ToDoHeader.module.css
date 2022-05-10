@@ -1,0 +1,5 @@
+.to-do-header-label {
+  font-family: var(--mainFont);
+  font-size: 18px;
+  color: var(--lightGray);
+}

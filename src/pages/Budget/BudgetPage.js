@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { useSelector } from "react-redux";
 
 import Budget from "../../components/Dashboard/Budget/Budget";
@@ -5,13 +6,12 @@ import TopBar from "../../components/Dashboard/Top Bar/TopBar";
 import Navigation from "../../components/Layout/Navigation";
 import Instruction from "../../components/UI/Instruction";
 import ToggleBudget from "../../components/Dashboard/Budget/ToggleBudget/ToggleBudget";
-
-import classes from "./Main.module.css";
-import { Fragment } from "react";
 import Expenses from "../../components/Dashboard/Expenses/Expenses";
 import IncomesHistory from "../../components/Dashboard/Incomes/IncomesHistory";
 
-const Main = () => {
+import classes from "./BudgetPage.module.css";
+
+const BudgetPage = () => {
   const isInstructionVisible = useSelector(
     (state) => state.dashboard.instructionVisibility
   );
@@ -21,7 +21,7 @@ const Main = () => {
   );
 
   return (
-    <div className={classes["dashboard-main"]}>
+    <div className={classes["dashboard-budget"]}>
       <TopBar />
       <Navigation />
       {isInstructionVisible && <Instruction />}
@@ -37,4 +37,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default BudgetPage;

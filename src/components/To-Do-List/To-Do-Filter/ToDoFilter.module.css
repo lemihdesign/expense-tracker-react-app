@@ -1,0 +1,23 @@
+.to-do-filter-bar {
+  width: 95%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--borderLightGray);
+  margin-top: 20px;
+}
+
+.to-do-filter-bar a {
+  display: block;
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--lightGray);
+}
+
+.to-do-filter-bar a.active-filter-option {
+  color: var(--darkGray);
+  font-weight: 600;
+  border-bottom: 2px solid var(--darkGray);
+  line-height: 50px;
+}

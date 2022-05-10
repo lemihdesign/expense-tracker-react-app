@@ -1,13 +1,16 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
 import Home from "./pages/Landing Page/Home";
-import Main from "./pages/Dashboard/Main";
+import BudgetPage from "./pages/Budget/BudgetPage";
+import ToDoListPage from "./pages/ToDoList/ToDoListPage";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/budget" element={<Main />} />
+      <Route path="/budget" element={<BudgetPage />} />
+      <Route path="/to-do/all" element={<ToDoListPage />} />
+      <Route path="/to-do/:filterTask" element={<ToDoListPage />} />
     </Routes>
   );
 }
