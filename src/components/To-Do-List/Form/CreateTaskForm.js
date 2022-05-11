@@ -49,7 +49,10 @@ const CreateTaskForm = () => {
   const addTaskStep = (e) => {
     e.preventDefault();
     if (stepsValue.trim().length > 0) {
-      const item = { id: Math.floor(Math.random() * 1024), text: stepsValue };
+      const item = {
+        id: Math.floor(Math.random() * 1024),
+        text: stepsValue,
+      };
       setTaskSteps([...taskSteps, item]);
     } else return;
   };

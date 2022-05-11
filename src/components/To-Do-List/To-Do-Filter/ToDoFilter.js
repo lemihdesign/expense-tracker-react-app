@@ -7,11 +7,26 @@ import classes from "./ToDoFilter.module.css";
 
 const ToDoFilter = () => {
   const isFormActive = useSelector((state) => state.todo.createTaskFormToggle);
+  const toDoItems = useSelector((state) => state.todo.toDoItems);
   const dispatch = useDispatch();
 
   const createFormToggledHandler = () => {
     dispatch(toDoActions.createTaskFormToggleHandler());
   };
+
+  const toDoItemsTypes = toDoItems.map((toDoItem) => toDoItem.type);
+  const uniqueToDoItemsTypes = [...new Set(toDoItemsTypes)];
+
+  const navLinks = uniqueToDoItemsTypes.map((uniqueToDoItem) => (
+    <NavLink
+      to={`/to-do/${uniqueToDoItem.toLowerCase().trim()}`}
+      className={(navData) =>
+        navData.isActive ? classes["active-filter-option"] : ""
+      }
+    >
+      {uniqueToDoItem.charAt(0).toUpperCase() + uniqueToDoItem.slice(1)}
+    </NavLink>
+  ));
 
   let buttonContent;
   if (!isFormActive)
@@ -30,7 +45,8 @@ const ToDoFilter = () => {
   return (
     <div className={classes["filter-bar"]}>
       <ul className={classes["to-do-filter-bar"]}>
-        <NavLink
+        {navLinks}
+        {/* <NavLink
           to="/to-do/all"
           className={(navData) =>
             navData.isActive ? classes["active-filter-option"] : ""
@@ -61,7 +77,7 @@ const ToDoFilter = () => {
           }
         >
           <li>Studying</li>
-        </NavLink>
+        </NavLink> */}
       </ul>
       <button onClick={createFormToggledHandler}>{buttonContent}</button>
     </div>
