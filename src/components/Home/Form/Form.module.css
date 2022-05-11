@@ -191,6 +191,11 @@
     outline: none;
     border: none;
     text-align: center;
+    border: 1px solid var(--borderLightGray);
+  }
+
+  form select {
+    border: 1px solid var(--borderLightGray);
   }
 
   form button {

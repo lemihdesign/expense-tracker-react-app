@@ -165,7 +165,7 @@ const Expenses = () => {
       );
     } else {
       content = (
-        <form onSubmit={submitFormHandler}>
+        <form onSubmit={submitFormHandler} className={classes["expenses-form"]}>
           <label htmlFor="expense-name">Expense Name</label>
           <input
             type="text"
@@ -241,7 +241,7 @@ const Expenses = () => {
       );
     } else {
       content = (
-        <form onSubmit={submitFormHandler}>
+        <form onSubmit={submitFormHandler} className={classes["expenses-form"]}>
           <label htmlFor="expense-name">Expense Name</label>
           <input
             type="text"

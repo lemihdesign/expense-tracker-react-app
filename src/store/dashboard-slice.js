@@ -17,6 +17,7 @@ const initialDashboardState = {
     ? JSON.parse(localStorage.getItem("expenses"))
     : [],
   budgetToggle: false,
+  createTaskFormToggle: false,
 };
 
 const dashboardSlice = createSlice({
@@ -57,6 +58,9 @@ const dashboardSlice = createSlice({
     },
     toggleBudgetHandler(state) {
       state.budgetToggle = !state.budgetToggle;
+    },
+    createTaskFormToggleHandler(state) {
+      state.createTaskFormToggle = !state.createTaskFormToggle;
     },
     addExpense(state, action) {
       state.expenses.push(action.payload);

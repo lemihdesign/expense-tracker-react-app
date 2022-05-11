@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { dashboardActions } from "../../../store/dashboard-slice";
 
 import classes from "./ToDoFilter.module.css";
 
 const ToDoFilter = () => {
+  const dispatch = useDispatch();
+
+  const createFormToggledHandler = () => {
+    dispatch(dashboardActions.createTaskFormToggleHandler());
+  };
+
   return (
     <div className={classes["filter-bar"]}>
       <ul className={classes["to-do-filter-bar"]}>
@@ -40,7 +47,7 @@ const ToDoFilter = () => {
           <li>Studying</li>
         </NavLink>
       </ul>
-      <button>
+      <button onClick={createFormToggledHandler}>
         <i className="fa-solid fa-plus"></i> Add Task
       </button>
     </div>
