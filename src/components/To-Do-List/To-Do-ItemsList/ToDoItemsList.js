@@ -5,7 +5,7 @@ import CreateTaskForm from "../Form/CreateTaskForm";
 
 const ToDoItemsList = () => {
   const createFormToggled = useSelector(
-    (state) => state.dashboard.createTaskFormToggle
+    (state) => state.todo.createTaskFormToggle
   );
 
   const params = useParams();

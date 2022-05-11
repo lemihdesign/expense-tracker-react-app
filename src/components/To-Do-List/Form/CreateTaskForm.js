@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import useInput from "../../../hooks/use-input";
+import { toDoActions } from "../../../store/to-do-slice";
 
 import classes from "./CreateTaskForm.module.css";
 
 const CreateTaskForm = () => {
   const [stepsValue, setStepsValue] = useState("");
   const [taskSteps, setTaskSteps] = useState([]);
-  let stepId = 1;
+  const dispatch = useDispatch();
 
   const {
     value: taskNameValue,
@@ -46,8 +48,10 @@ const CreateTaskForm = () => {
 
   const addTaskStep = (e) => {
     e.preventDefault();
-    const item = { id: Math.floor(Math.random() * 1024), text: stepsValue };
-    setTaskSteps([...taskSteps, item]);
+    if (stepsValue.trim().length > 0) {
+      const item = { id: Math.floor(Math.random() * 1024), text: stepsValue };
+      setTaskSteps([...taskSteps, item]);
+    } else return;
   };
 
   const stepsContent = taskSteps.map((taskStep) => (
@@ -56,9 +60,32 @@ const CreateTaskForm = () => {
   const hasSteps = taskSteps.length > 0;
   const numberOfSteps = taskSteps.length;
 
+  const onSubmitForm = (e) => {
+    e.preventDefault();
+
+    if (!formIsValid) return;
+
+    if (formIsValid) {
+      const newTask = {
+        id: Math.floor(Math.random() * 1024),
+        name: taskNameValue,
+        type: taskTypeValue,
+        description: taskDescriptionValue,
+        steps: taskSteps,
+      };
+      dispatch(toDoActions.addNewTask(newTask));
+    }
+
+    taskNameReset();
+    taskDescriptionReset();
+    taskTypeReset();
+    setStepsValue("");
+    setTaskSteps([]);
+  };
+
   return (
     <div className={classes["form-container"]}>
-      <form className={classes["create-task-form"]}>
+      <form className={classes["create-task-form"]} onSubmit={onSubmitForm}>
         {/*
                 Nazwa Taska
                 Typ Taska
