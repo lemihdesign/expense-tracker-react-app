@@ -1,8 +1,13 @@
+import { useState } from "react";
 import useInput from "../../../hooks/use-input";
 
 import classes from "./CreateTaskForm.module.css";
 
 const CreateTaskForm = () => {
+  const [stepsValue, setStepsValue] = useState("");
+  const [taskSteps, setTaskSteps] = useState([]);
+  let stepId = 1;
+
   const {
     value: taskNameValue,
     hasError: taskNameHasError,
@@ -34,6 +39,22 @@ const CreateTaskForm = () => {
 
   if (taskNameIsValid && taskTypeIsValid && taskDescriptionIsValid)
     formIsValid = true;
+
+  const changeStepsValueHandler = (e) => {
+    setStepsValue(e.target.value);
+  };
+
+  const addTaskStep = (e) => {
+    e.preventDefault();
+    const item = { id: Math.floor(Math.random() * 1024), text: stepsValue };
+    setTaskSteps([...taskSteps, item]);
+  };
+
+  const stepsContent = taskSteps.map((taskStep) => (
+    <li key={taskStep.id}>{taskStep.text}</li>
+  ));
+  const hasSteps = taskSteps.length > 0;
+  const numberOfSteps = taskSteps.length;
 
   return (
     <div className={classes["form-container"]}>
@@ -84,9 +105,21 @@ const CreateTaskForm = () => {
         )}
         <label htmlFor="taskSteps">Steps to be perfomed</label>
         <div className={classes["steps-input"]}>
-          <input type="text" id="taskSteps" />
-          <button>+</button>
+          <input
+            type="text"
+            id="taskSteps"
+            value={stepsValue}
+            onChange={changeStepsValueHandler}
+          />
+          <button onClick={addTaskStep}>+</button>
         </div>
+        {hasSteps && (
+          <div className={classes["steps-list"]}>
+            <p>List of your steps</p>
+            <p>Number of tasks: {numberOfSteps}</p>
+            <ol>{stepsContent}</ol>
+          </div>
+        )}
         <button
           disabled={!formIsValid}
           className={classes["create-new-task-btn"]}

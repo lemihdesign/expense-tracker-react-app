@@ -35,7 +35,7 @@ const Navigation = () => {
             </li>
             <li>
               <NavLink to="/">
-                <i class="fa-solid fa-clock"></i> Schedules{" "}
+                <i className="fa-solid fa-clock"></i> Schedules{" "}
                 <span className={classes["soon-label"]}>Soon</span>
               </NavLink>
             </li>
@@ -47,7 +47,7 @@ const Navigation = () => {
             </li>
             <li>
               <NavLink to="/">
-                <i class="fa-solid fa-business-time"></i> Reminders{" "}
+                <i className="fa-solid fa-business-time"></i> Reminders{" "}
                 <span className={classes["soon-label"]}>Soon</span>
               </NavLink>
             </li>
