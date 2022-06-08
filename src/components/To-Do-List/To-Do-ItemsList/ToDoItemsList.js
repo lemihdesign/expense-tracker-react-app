@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 
 import CreateTaskForm from "../Form/CreateTaskForm";
+import ToDoItem from "./ToDoItem";
 
 const ToDoItemsList = () => {
   const createFormToggled = useSelector(
@@ -15,7 +16,13 @@ const ToDoItemsList = () => {
 
   let content = toDoItems
     .filter((item) => item.type === filterOption)
-    .map((item) => <p>{item.name}</p>);
+    .map((item) => (
+      <ToDoItem
+        name={item.name}
+        description={item.description}
+        steps={item.steps}
+      />
+    ));
 
   return (
     <div>
