@@ -1,5 +1,14 @@
-.to-do-container {
-  width: 85%;
-  margin-left: 15%;
-  padding: 25px 0 0 60px;
+@media (max-width: 768px) {
+  .to-do-container {
+    width: 95%;
+    margin: 150px auto 0 auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .to-do-container {
+    width: 85%;
+    margin-left: 15%;
+    padding: 25px 0 0 60px;
+  }
 }

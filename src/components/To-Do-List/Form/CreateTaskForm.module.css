@@ -6,15 +6,6 @@ form.create-task-form .error {
   margin-top: 10px;
 }
 
-form.create-task-form {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* margin: 0 auto; */
-}
-
 form.create-task-form p {
   width: 100%;
   display: flex;
@@ -99,4 +90,24 @@ form.create-task-form .steps-list ol {
 
 form.create-task-form .steps-list li {
   line-height: 30px;
+}
+
+@media (max-width: 768px) {
+  form.create-task-form {
+    width: 95%;
+    height: 100%;
+    padding-bottom: 100px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 769px) {
+  form.create-task-form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+  }
 }

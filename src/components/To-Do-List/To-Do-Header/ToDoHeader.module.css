@@ -1,5 +1,16 @@
 .to-do-header-label {
   font-family: var(--mainFont);
-  font-size: 18px;
   color: var(--lightGray);
+}
+
+@media (max-width: 768px) {
+  .to-do-header-label {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 769px) {
+  .to-do-header-label {
+    font-size: 18px;
+  }
 }

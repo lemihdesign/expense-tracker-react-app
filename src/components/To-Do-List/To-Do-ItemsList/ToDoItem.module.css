@@ -1,5 +1,4 @@
 .task-box {
-  width: 95%;
   min-height: 50px;
   height: 100%;
   margin-top: 25px;
@@ -26,4 +25,16 @@
 .task-list-item i {
   color: limegreen;
   margin: 0 10px 0 10px;
+}
+
+@media (max-width: 768px) {
+  .task-box {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .task-box {
+    width: 95%;
+  }
 }
