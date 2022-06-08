@@ -1,0 +1,29 @@
+.task-box {
+  width: 95%;
+  min-height: 50px;
+  height: 100%;
+  margin-top: 25px;
+  padding: 10px;
+  border: 1px solid var(--borderLightGray);
+  font-family: var(--groteskFont);
+  font-size: 14px;
+  color: var(--darkGray);
+}
+
+.task-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.task-description {
+  margin-top: 10px;
+}
+
+.task-list-item {
+  margin-top: 10px;
+}
+
+.task-list-item i {
+  color: limegreen;
+  margin: 0 10px 0 10px;
+}
