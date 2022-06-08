@@ -8,14 +8,14 @@ const ToDoItemsList = () => {
     (state) => state.todo.createTaskFormToggle
   );
 
+  const toDoItems = useSelector((state) => state.todo.toDoItems);
+
   const params = useParams();
   const filterOption = params.filterTask;
-  let content = "";
 
-  if (filterOption === "job") content = <p>Job Items</p>;
-  if (filterOption === "all") content = <p>All Items</p>;
-  if (filterOption === "cleaning") content = <p>Cleaning Items</p>;
-  if (filterOption === "studying") content = <p>Studying Items</p>;
+  let content = toDoItems
+    .filter((item) => item.type === filterOption)
+    .map((item) => <p>{item.name}</p>);
 
   return (
     <div>

@@ -72,7 +72,7 @@ const CreateTaskForm = () => {
       const newTask = {
         id: Math.floor(Math.random() * 1024),
         name: taskNameValue,
-        type: taskTypeValue,
+        type: taskTypeValue.toLowerCase(),
         description: taskDescriptionValue,
         steps: taskSteps,
       };
