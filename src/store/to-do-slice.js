@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialToDoState = { createTaskFormToggle: false, toDoItems: [] };
+const initialToDoState = {
+  createTaskFormToggle: false,
+  toDoItems: localStorage.getItem("todo")
+    ? JSON.parse(localStorage.getItem("todo"))
+    : [],
+};
 
 const toDoSlice = createSlice({
   name: "todo",
@@ -11,6 +16,7 @@ const toDoSlice = createSlice({
     },
     addNewTask(state, action) {
       state.toDoItems.push(action.payload);
+      localStorage.setItem("todo", JSON.stringify(state.toDoItems));
     },
   },
 });
