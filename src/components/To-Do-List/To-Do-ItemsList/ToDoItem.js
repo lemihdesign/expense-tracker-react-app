@@ -1,7 +1,12 @@
+import { useDispatch } from "react-redux";
+
+import { toDoActions } from "../../../store/to-do-slice";
+
 import classes from "./ToDoItem.module.css";
 
 const ToDoItem = (props) => {
-  const { name, description, steps } = props;
+  const { id, name, description, steps } = props;
+  const dispatch = useDispatch();
 
   const stepsList = steps.map((step) => (
     <li key={step.id} className={classes["task-list-item"]}>
@@ -10,7 +15,10 @@ const ToDoItem = (props) => {
     </li>
   ));
 
-  console.log(steps);
+  const deleteTask = (taskId) => {
+    dispatch(toDoActions.deleteTask(taskId));
+  };
+
   return (
     <div className={classes["task-box"]}>
       <p className={classes["task-name"]}>{name}</p>
@@ -18,6 +26,8 @@ const ToDoItem = (props) => {
         Główny cel zadania: {description}
       </p>
       <ul className={classes["task-list"]}>{stepsList}</ul>
+      <button onClick={() => deleteTask(id)}>Usuń</button>
+      <button>Zakończ</button>
     </div>
   );
 };

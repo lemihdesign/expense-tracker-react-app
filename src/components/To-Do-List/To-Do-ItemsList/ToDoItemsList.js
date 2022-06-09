@@ -18,6 +18,7 @@ const ToDoItemsList = () => {
     .filter((item) => item.type === filterOption)
     .map((item) => (
       <ToDoItem
+        id={item.id}
         name={item.name}
         description={item.description}
         steps={item.steps}
