@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialToDoState = {
@@ -19,15 +20,14 @@ const toDoSlice = createSlice({
       localStorage.setItem("todo", JSON.stringify(state.toDoItems));
     },
     deleteTask(state, action) {
-      /* const deletedItem = state.toDoItems.filter(
-        (item) => item.id === action.payload
-      );
-      state.toDoItems.pop(deletedItem); */
       const newTodos = state.toDoItems.filter(
         (item) => item.id !== action.payload
       );
       state.toDoItems = newTodos;
       localStorage.setItem("todo", JSON.stringify(state.toDoItems));
+      toast.success("Prawidłowo usunięto zadanie.", {
+        position: "bottom-left",
+      });
     },
     completeTask(state, action) {},
   },
